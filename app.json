@@ -29,7 +29,6 @@
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "Tea Together"
   },
-  "style": "v2",
   "rendererOptions": {
     "skyline": {
       "defaultDisplayBlock": true,
@@ -42,6 +41,9 @@
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
-    "common-header": "/components/common-header/index"
+    "common-header": "/components/common-header/index",
+    "cn-en-title": "/components/cn-en-title/index",
+    "van-button": "@vant/weapp/button/index",
+    "common-lr-item": "/components/common-lr-item/index"
   }
 }

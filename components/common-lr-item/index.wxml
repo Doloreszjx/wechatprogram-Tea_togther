@@ -1,0 +1,5 @@
+<!-- 左右结构商品栏 -->
+<navigator class="common-lr-item-wrapper">
+  <!-- 商品图片 -->
+  <image src="{{item.picurl}}" mode="aspectFill"/>
+</navigator>

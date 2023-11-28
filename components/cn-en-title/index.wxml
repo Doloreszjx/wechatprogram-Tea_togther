@@ -1,0 +1,7 @@
+<!--components/cn-en-title/index.wxml-->
+<!-- 公用组件：英文名为底，中文名在上 -->
+<view class="{{CnEnTitleCls}} cn-en-title-wrapper">
+  <view class="en-text">{{enTitle}}</view>
+  <view class="cn-title">{{cnTitle}}</view>
+  <view class="line" />
+</view>
