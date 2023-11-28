@@ -1,0 +1,4 @@
+<!--pages/news/index.wxml-->
+<block>
+  <common-header />
+</block>

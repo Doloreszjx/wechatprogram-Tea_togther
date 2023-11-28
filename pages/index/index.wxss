@@ -1,0 +1,13 @@
+.index-swpier-wrapper {
+  padding-top: 30rpx;
+}
+
+.index-swpier-wrapper swiper {
+  height: 460rpx;
+}
+
+.index-swpier-wrapper swiper swiper-item image {
+  width: 690rpx;
+  height: 460rpx;
+  border-radius: 30rpx;
+}

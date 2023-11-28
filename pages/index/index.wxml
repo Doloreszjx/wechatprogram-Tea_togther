@@ -1,0 +1,25 @@
+<block>
+  <!-- 头部区域 -->
+  <common-header />
+  <!-- banner轮播图 -->
+  <view class="index-swpier-wrapper">
+    <swiper
+      previous-margin='30rpx'
+      autoplay
+      interval='2000'
+      circular
+    >
+      <swiper-item>
+        <image src="/static/images/banner0.jpg" mode="heightFix" />
+      </swiper-item>
+      <swiper-item>
+        <image src="/static/images/banner1.jpg" mode="heightFix" />
+      </swiper-item><swiper-item>
+        <image src="/static/images/banner2.jpg" mode="heightFix" />
+      </swiper-item><swiper-item>
+        <image src="/static/images/banner3.jpg" mode="heightFix" />
+      </swiper-item>
+
+    </swiper>
+  </view>
+</block>

@@ -1,0 +1,17 @@
+/* components/common-header.wxss */
+.common-header-wrapper {
+  height: 120rpx;
+  border-bottom: 1rpx solid var(--themeColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.common-header-wrapper .common-header-nav {
+  height: 70rpx;
+}
+
+.common-header-wrapper .common-header-nav .logo {
+  height: 100%;
+}

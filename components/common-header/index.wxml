@@ -1,0 +1,22 @@
+<!--components/common-header.wxml-->
+<view class="common-header-wrapper">
+  <navigator 
+    url="/pages/index/index" 
+    class="common-header-nav"
+    open-type="switchTab"
+  > 
+    <image 
+    src="/static/images/logo.jpg" 
+    mode="heightFix" 
+    style="height: 70rpx;"
+    class="logo"
+  />
+  </navigator>
+  
+  <image 
+    src="/static/images/search.png" 
+    mode="aspectFit" 
+    style="height: 40rpx; width: 40rpx;"  
+    class="common-header-search"
+  />
+</view>
