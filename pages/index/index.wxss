@@ -72,3 +72,21 @@
   border-bottom: none;
   padding-bottom: 0rpx;
 }
+
+.index-brand-wrapper {
+  padding: 50rpx 30rpx;
+  background-color: var(--globalBgColor2);
+}
+
+.index-brand-wrapper .brand-content .item-wrapper {
+  border-bottom: dashed 1rpx var(--themeColor);
+  padding: 20rpx 0;
+}
+
+.index-brand-wrapper .brand-content .item-wrapper:first-child {
+  padding-top: 0rpx;
+}
+
+.index-brand-wrapper .brand-content .item-wrapper:last-child {
+  border-bottom: none;
+}

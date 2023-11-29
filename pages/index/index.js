@@ -4,7 +4,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    newsArr: [{
+      picUrl: '/static/images/navicon1.png',
+      title: '白茶🍺散茶对身体不好么？压成茶饼又有什么好处',
+      infos: [{
+        iconName: 'clock-o',
+        iconSize: '14',
+        desc: '2023年11月29日'
+      }, {
+        iconName: 'eye-o',
+        iconSize: '14',
+        desc: '6.5k'
+      }, {
+        iconName: 'user-o',
+        iconSize: '14',
+        desc: '美丽芝士小姐'
+      }]
+    }, {
+      picUrl: '/static/images/navicon1.png',
+      title: '白茶🍺散茶对身体不好么？压成茶饼又有什么好处11111111111111111111111',
+      infos: [{
+        iconName: 'clock-o',
+        iconSize: '14',
+        desc: '2023年11月29日'
+      }, {
+        iconName: 'eye-o',
+        iconSize: '14',
+        desc: '6.5k'
+      }, {
+        iconName: 'user-o',
+        iconSize: '14',
+        desc: '美丽芝士小姐'
+      }]
+    }]
   },
 
   /**

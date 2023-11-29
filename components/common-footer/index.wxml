@@ -1,0 +1,12 @@
+<!-- 公共底部组件：版权说明+地址 -->
+<view class="common-footer-wrapper">  
+  <view class="row">解释权归一起喝茶多山公司所有</view>
+  <view class="row">Copyright © {{year}} 版权所有</view>
+  <view class="row">多妹宇宙联络部</view>
+</view>
+
+<view class="common-footer-kefu">
+  <button class="btn" open-type="contact">1</button>
+  <image src="/static/images/kefu.png" mode="aspectFill" class="pic"/>
+  <view class="line"></view>
+</view>

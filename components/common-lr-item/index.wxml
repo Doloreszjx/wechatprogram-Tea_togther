@@ -1,5 +1,26 @@
 <!-- 左右结构商品栏 -->
-<navigator class="common-lr-item-wrapper">
+<!-- 支持点击跳转 -->
+<navigator 
+  class="common-lr-item-wrapper"
+  url="{{lrItem.targetUrl}}"
+>
   <!-- 商品图片 -->
-  <image src="{{item.picurl}}" mode="aspectFill"/>
+  <view class="l-item-pic">
+    <image class="l-item-img" src="{{lrItem.picUrl}}" mode="aspectFit"/>
+  </view>
+  <!-- 产品说明（上下结构）：产品标题（上）+发表时间&浏览量&作者名 -->
+  <view class="r-item-wrapper">
+    <!-- <view class="item-title">{{lrItem.title}}</view>
+     -->
+     <rich-text class="item-title" style="word-wrap: break-word;word-break: break-all;" nodes="<div style='font-size: 24rpx; line-height:1.4em; text-overflow:ellipsis; -webkit-box-orient:vertical;-webkit-line-clamp:2; overflow: hidden; display: -webkit-box;'>{{lrItem.title}}</div>"></rich-text>
+    
+    <view 
+      class="item-info-wrapper"
+      wx:for="{{lrItem.infos}}"
+      wx:key="index"
+    >
+      <van-icon name="{{item.iconName}}" size="{{item.iconSize}}" class="vanicon"/>
+      <view class="desc">{{item.desc}}</view>
+    </view>
+  </view>
 </navigator>

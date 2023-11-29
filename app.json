@@ -43,7 +43,8 @@
   "usingComponents": {
     "common-header": "/components/common-header/index",
     "cn-en-title": "/components/cn-en-title/index",
-    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "common-footer": "/components/common-footer/index",
     "common-lr-item": "/components/common-lr-item/index"
   }
 }

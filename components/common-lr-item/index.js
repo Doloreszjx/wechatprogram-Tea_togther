@@ -5,12 +5,16 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    item:{
+    lrItem: {
       type:Object,
       value:{
         title:"默认测试标题",
-        author:"yean"
+        targetUrl: ''
       }
+    },
+    targetUrl: {
+      type: String,
+      value: ''
     }
   },
 

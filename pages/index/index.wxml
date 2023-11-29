@@ -59,9 +59,18 @@
       enTitle="News"
       cnTitle="新闻资讯"
     />
-    <common-lr-item />
-
+    <view class="brand-content">
+      <view 
+        class="item-wrapper" 
+        wx:for="{{newsArr}}"    
+        wx:key="index"
+      >   
+        <common-lr-item lrItem="{{item}}" />    
+      </view>
+    </view>
   </view>
+  <!-- 公共底部 -->
+  <common-footer />
 
 
 </block>
