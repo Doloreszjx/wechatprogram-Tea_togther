@@ -1,4 +1,23 @@
 <!--pages/news/index.wxml-->
 <block>
   <common-header />
+  <!-- 正文部分 -->
+  <view class="news-wrapper">
+    <!-- 新闻列表 -->
+    <view class="brand-content">
+      <view 
+        class="item-wrapper" 
+        wx:for="{{newsArr}}"    
+        wx:key="index"
+      >   
+        <common-lr-item lrItem="{{item}}" />    
+      </view>
+    </view>
+    <view wx:if="{{isLoading}}" class="loading-wrapper">
+      <van-loading size="24px">加载中...</van-loading>
+    </view>
+    <!-- 数据加载完毕时 -->
+    <view wx:if="{{isTotal}}" class="total-wrapper">----数据加载完毕----</view>
+  </view>
+  
 </block>

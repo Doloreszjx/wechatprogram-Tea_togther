@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/classify/index",
-    "pages/news/index"
+    "pages/news/index",
+    "pages/newsDetail/index"
   ],
   "tabBar": {
     "color": "#1a1b1c",
@@ -45,6 +46,8 @@
     "cn-en-title": "/components/cn-en-title/index",
     "van-icon": "@vant/weapp/icon/index",
     "common-footer": "/components/common-footer/index",
-    "common-lr-item": "/components/common-lr-item/index"
+    "common-lr-item": "/components/common-lr-item/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-skeleton": "@vant/weapp/skeleton/index"
   }
 }

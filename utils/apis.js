@@ -16,3 +16,12 @@ export function queryNewsList(data) {
     data
   })
 }
+
+// 获取新闻详情页数据
+export function queryNewsDetailInfo(data) {
+  return request({
+    url: "/news/detail",
+    method: "POST",
+    data
+  })
+}

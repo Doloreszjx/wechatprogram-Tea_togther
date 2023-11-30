@@ -1,7 +1,7 @@
 <!-- 左右结构商品栏 -->
 <!-- 支持点击跳转 -->
 <navigator 
-url="/pages/newsDetail/newsDetail?id={{lrItem._id}}" 
+url="/pages/newsDetail/index?id={{lrItem._id}}" 
 class="nsitem">
   <view class="pic">
     <image class="img" src="{{lrItem.picurl}}" mode="aspectFill"/>

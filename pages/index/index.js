@@ -1,5 +1,6 @@
 import { queryNavList, queryNewsList } from '../../utils/apis';
 import { formatTime, formatNum } from '../../utils/common';
+
 Page({
 
   /**

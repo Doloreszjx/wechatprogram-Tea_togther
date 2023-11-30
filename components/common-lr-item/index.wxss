@@ -38,8 +38,12 @@
 
 .nsitem .text .info {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  max-width: 460rpx;
+  overflow: hidden;
   font-size: 28rpx;
+  flex-wrap: nowrap;
   color: var(--descColor);
 }
 

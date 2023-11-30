@@ -23,7 +23,7 @@
     </swiper>
   </view>
   <!-- 导航栏 -->
-  <view class="index-scroll-wrapper">
+  <view wx:if="{{!!navArr}}" class="index-scroll-wrapper">
     <scroll-view scroll-x>
       <navigator 
         url="" 
@@ -52,7 +52,7 @@
     </view>
   </view>
   <!-- 品牌简介 -->
-  <view class="index-brand-wrapper">
+  <view wx:if="{{!!newsArr.length}}" class="index-brand-wrapper">
     <cn-en-title
       enTitle="News"
       cnTitle="新闻资讯"
