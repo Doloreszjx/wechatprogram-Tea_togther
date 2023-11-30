@@ -1,50 +1,63 @@
+import { queryNavList, queryNewsList } from '../../utils/apis';
+import { formatTime, formatNum } from '../../utils/common';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    newsArr: [{
-      picUrl: '/static/images/navicon1.png',
-      title: '白茶🍺散茶对身体不好么？压成茶饼又有什么好处',
-      infos: [{
-        iconName: 'clock-o',
-        iconSize: '14',
-        desc: '2023年11月29日'
-      }, {
-        iconName: 'eye-o',
-        iconSize: '14',
-        desc: '6.5k'
-      }, {
-        iconName: 'user-o',
-        iconSize: '14',
-        desc: '美丽芝士小姐'
-      }]
-    }, {
-      picUrl: '/static/images/navicon1.png',
-      title: '白茶🍺散茶对身体不好么？压成茶饼又有什么好处11111111111111111111111',
-      infos: [{
-        iconName: 'clock-o',
-        iconSize: '14',
-        desc: '2023年11月29日'
-      }, {
-        iconName: 'eye-o',
-        iconSize: '14',
-        desc: '6.5k'
-      }, {
-        iconName: 'user-o',
-        iconSize: '14',
-        desc: '美丽芝士小姐'
-      }]
-    }]
+    navArr: [],
+    newsArr: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getNavList();
+    this.getNewsList();
   },
+
+// 获取首页导航栏数据
+getNavList() {
+  queryNavList()
+      .then(res => {
+        if (!!(res.data && res.data.length)) {
+          const navList = res.data.map(item => ({
+            iconUrl: item.icon,
+            desc: item.classname,
+            id: item.id
+          }))
+          this.setData({
+            navArr: navList
+          })
+        }
+      })
+      .catch(err => {
+        console.error('首页列表获取失败', err);
+      })
+},
+// 获取首页新闻列表数据
+getNewsList() {
+  queryNewsList({
+    limit:3,
+    hot:true
+  })
+    .then(res=>{
+      if (!!(res.data && res.data.length)) {
+        res.data.forEach(item=>{
+          item.view_count=formatNum(item.view_count)
+          item.publish_date=formatTime(item.publish_date,5)
+        })
+        this.setData({
+          newsArr:res.data
+        })
+      }
+  })
+  .catch(err => {
+    console.error('首页新闻列表获取失败', err);
+  })
+},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

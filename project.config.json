@@ -13,6 +13,9 @@
     "minified": true,
     "enhance": true,
     "showShadowRootInWxmlPanel": true,
+    "useCompilerPlugins": [
+      "sass"
+    ],
     "packNpmRelationList": [
       {
         "packageJsonPath": "./package.json",

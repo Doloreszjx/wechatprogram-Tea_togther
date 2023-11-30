@@ -24,19 +24,17 @@
   </view>
   <!-- 导航栏 -->
   <view class="index-scroll-wrapper">
-    <scroll-view
-      scroll-x
-    >
+    <scroll-view scroll-x>
       <navigator 
         url="" 
         class="scroll-nav-item" 
-        wx:for="{{6}}"
-        wx:key="index"
+        wx:for="{{navArr}}"
+        wx:key="item.id"
       >
         <view class="pic">
-          <image src='/static/images/navicon{{index+1}}.png' mode=""/>
+          <image src='{{item.iconUrl}}' mode=""/>
         </view>
-        <view class="text">明星茶</view>
+        <view class="text">{{item.desc}}</view>
       </navigator>
     </scroll-view>
   </view>
