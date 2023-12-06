@@ -25,3 +25,21 @@ export function queryNewsDetailInfo(data) {
     data
   })
 }
+
+// 商场页面导航栏接口
+export function queryProList(data) {
+  return request({
+    url: '/nav/get',
+    method: 'POST',
+    data
+  })
+}
+
+// 商场页面导航栏对应商品列表接口
+export function queryNav2ProList(data) {
+  return request({
+    url: '/product/getlist',
+    method: 'POST',
+    data
+  })
+}

@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/classify/index",
+    "pages/classify/index", 
     "pages/news/index",
     "pages/newsDetail/index"
   ],
@@ -48,6 +48,8 @@
     "common-footer": "/components/common-footer/index",
     "common-lr-item": "/components/common-lr-item/index",
     "van-loading": "@vant/weapp/loading/index",
-    "van-skeleton": "@vant/weapp/skeleton/index"
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
   }
 }
