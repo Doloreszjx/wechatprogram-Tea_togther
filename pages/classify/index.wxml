@@ -34,5 +34,19 @@
     </view>
 </view>
 
-<xzs-footer></xzs-footer>
+<!-- 商品列表 -->
+<view 
+  wx:if="{{!!proList.length}}" 
+  class="pro-list-wrapper" 
+  wx:for="{{proList}}" 
+  wx:key="key"
+>
+  <classify-pro-item 
+    picUrl="{{item.picUrl}}"
+    title="{{item.title}}"
+    descList="{{item.descList}}"
+  />
+</view>
+
+<common-footer />
 </block>

@@ -1,0 +1,8 @@
+/* components/classify-pro-item/index.wxss */
+.pro-item-wrapper {
+  border: 1rpx solid #eee;
+}
+
+.pro-item-wrapper .pic-wrapper image {
+  width: 100%;
+}

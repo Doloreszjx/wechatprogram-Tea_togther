@@ -1,5 +1,6 @@
 // pages/classify/index.js
 import { queryProList, queryNav2ProList } from '../../utils/apis';
+import { formatObj2Arr } from '../../utils/common';
 
 // 初始选中导航栏第一项
 let activeNavIndex;
@@ -60,8 +61,15 @@ getNav2ProList(activeSize=0) {
     size: activeSize, //分页从多少页开始
   }).then(res => {
     if (!!(res.errCode === 0 && res.data && res.data.length)) {
+      const formatProList = res.data.map(item => ({
+        descList: formatObj2Arr(item),
+        key: item._id,
+        picUrl: item.picpath,
+        title: item.title,
+      }));
+      
       this.setData({
-        proList: res.data
+        proList: formatProList
       })
     }
   }).catch(err => {
