@@ -8,3 +8,27 @@
   width: 100%;
   height: 100%;
 }
+
+.pro-content-wrapper .pro-content {
+  padding: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.pro-content-wrapper .pro-content .pro-item-wrapper {
+  width: 320rpx;
+  margin-bottom: 30rpx;
+}
+
+.pro-content-wrapper .loading-wrapper {
+  text-align: center;
+  padding: 30rpx 0;
+  z-index: 9999;
+}
+
+.pro-content-wrapper .loading-wrapper .isTotal {
+  font-size: 30rpx;
+  color: #666;
+}

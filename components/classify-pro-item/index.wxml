@@ -2,7 +2,7 @@
 <view class="pro-item-wrapper">
   <!-- 商品图片 -->
   <view wx:if="{{!!picUrl}}" class="pic-wrapper">
-    <image src="{{picUrl}}" mode="aspectFill"/>
+    <image class="pic" src="{{picUrl}}" mode="widthFix"/>
   </view>
   <!-- 商品名称 -->
   <view wx:if="{{!!title}}" class="pro-title">{{title}}</view>
@@ -13,7 +13,7 @@
     wx:for="{{descList}}"
     wx:key="key"
   >
-    <view class="name">{{item.name}}</view>
+    <view class="name">{{item.name}}:</view>
     <view class="value">{{item.value}}</view>
   </view>
 </view>

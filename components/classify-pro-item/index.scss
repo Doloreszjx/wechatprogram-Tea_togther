@@ -1,7 +1,34 @@
 /* components/classify-pro-item/index.wxss */
 .pro-item-wrapper {
   border:1rpx solid #eee;
-  .pic-wrapper image {
+  .pic-wrapper .pic {
     width: 100%
+  }
+  .pro-title {
+    font-size: 36rpx; 
+    color:#333; 
+    padding-bottom:20rpx;
+    margin-bottom:10rpx; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    width: 100%; 
+    overflow: hidden;
+  }
+  .desc-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 28rpx; 
+    color:#aaa; 
+    line-height: 2em;
+    .name {
+      font-size: 26rpx;
+      white-space: nowrap;
+      margin-right: 12rpx;
+    }
+    .value {
+      color:#666; 
+      white-space: nowrap;
+    }
   }
 }

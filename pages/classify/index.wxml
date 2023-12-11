@@ -1,5 +1,5 @@
 <!--pages/classify/index.wxml-->
-<block>
+<block wx:if="{{!isLoading}}">
   <common-header />
   <!-- 正文内容 -->
   <!-- banner -->
@@ -24,29 +24,32 @@
   <!-- 商品栏 -->
   <view class="pro-content-wrapper">
     <view class="pro-content">
-      <view class="box" wx:for="{{proArr}}" wx:key="_id">
-        <xzs-product-item item="{{item}}"></xzs-product-item>
+      <view class="pro-item-wrapper" wx:for="{{proArr}}" wx:key="_id">
+        <!-- <xzs-product-item item="{{item}}"></xzs-product-item> -->
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品列表 -->
+  <view class="pro-content-wrapper">
+    <view wx:if="{{!!proList.length}}" class="pro-content">
+      <view 
+        class="pro-item-wrapper" 
+        wx:for="{{proList}}" 
+        wx:key="key"
+      >
+        <classify-pro-item 
+          picUrl="{{item.picUrl}}"
+          title="{{item.title}}"
+          descList="{{item.descList}}"
+        />
       </view>
     </view>
     <view class="loading-wrapper">
-      <van-loading size="24px" wx:if="{{loading}}">加载中...</van-loading>
-      <view class="noData" wx:if="{{isData}}">没有更多数据了~</view>
+      <van-loading wx:if="{{isLoading}}" type="spinner" />
+      <view class="isTotal" wx:if="{{isTotal}}">没有更多数据了~</view>
     </view>
-</view>
-
-<!-- 商品列表 -->
-<view 
-  wx:if="{{!!proList.length}}" 
-  class="pro-list-wrapper" 
-  wx:for="{{proList}}" 
-  wx:key="key"
->
-  <classify-pro-item 
-    picUrl="{{item.picUrl}}"
-    title="{{item.title}}"
-    descList="{{item.descList}}"
-  />
-</view>
-
-<common-footer />
+  </view>
+  <common-footer />
 </block>
+

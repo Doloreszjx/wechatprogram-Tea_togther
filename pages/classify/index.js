@@ -11,7 +11,10 @@ Page({
    */
   data: {
     navList: [],
-    proList: []
+    proList: [],
+    navActive: 0,
+    isLoading: true, // 导航栏和商品接口有一个异常返回时为true
+    isTotal: false
   },
 
   /**
@@ -20,9 +23,9 @@ Page({
   async onLoad(options) {
     let {idx} = options;    
     await this.getNavList(); 
-    if(idx){
+    if(idx) {
       this.handleTabClick(idx);
-    }else{
+    }else {
       activeNavIndex = this.data.navList[0].navId;
       this.getNav2ProList();
     }
@@ -30,6 +33,9 @@ Page({
 
   // 导航栏接口
 async getNavList() {
+  this.setData({
+    isLoading: false
+  })
   await queryProList()
     .then(res => {
       if (!!(res.errCode === 0 && res.data && res.data.length)) {
@@ -39,11 +45,15 @@ async getNavList() {
           navId: item._id
         }))
         this.setData({
-          navList
+          navList,
+          isLoading: false
         })
       }
     })
     .catch(err => {
+      this.setData({
+        isLoading: true
+      })
       wx.showToast({
         title: '接口异常',
         duration: 2000,
@@ -56,6 +66,9 @@ async getNavList() {
 // 导航栏对应商品列表接口
 // size 从第几项开始，默认第0项，实现翻页效果
 getNav2ProList(activeSize=0) {
+  this.setData({
+    isLoading: false
+  })
   queryNav2ProList({
     navid: activeNavIndex, //分类ID
     size: activeSize, //分页从多少页开始
@@ -67,12 +80,20 @@ getNav2ProList(activeSize=0) {
         picUrl: item.picpath,
         title: item.title,
       }));
-      
       this.setData({
-        proList: formatProList
+        proList: formatProList,
+        isLoading: false
       })
+      if (formatProList.length === res.total) {
+        this.setData({
+          isTotal: true
+        })
+      }
     }
   }).catch(err => {
+    this.setData({
+      isLoading: true
+    })
     console.error("商品页查询商品列表接口异常：", err);;
     wx.showToast({
       title: '商品页查询商品列表接口异常',
@@ -83,8 +104,20 @@ getNav2ProList(activeSize=0) {
   
 },
 // 导航栏切换
-handleTabClick(res) {
-  console.log({res})
+handleTabClick(e) {
+  const index = e?.detail?.index ? e?.detail?.index : e;
+  if (!index) {
+    return
+  }
+  activeNavIndex = this.data.navList[index].navId;
+
+  this.setData({
+    proList: [],
+    isTotal: false,
+    navActive: Number(index)
+  })
+  this.getNav2ProList();
+
 },
 
   /**
@@ -126,7 +159,8 @@ handleTabClick(res) {
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+    if (this.data.isTotal) return;
+    this.getNav2ProList(this.data.proList.length)
   },
 
   /**

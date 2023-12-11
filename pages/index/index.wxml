@@ -26,10 +26,11 @@
   <view wx:if="{{!!navArr}}" class="index-scroll-wrapper">
     <scroll-view scroll-x>
       <navigator 
-        url="" 
+        url="../classify/index?idx={{index}}" 
         class="scroll-nav-item" 
         wx:for="{{navArr}}"
         wx:key="item.id"
+        open-type="reLaunch"
       >
         <view class="pic">
           <image src='{{item.iconUrl}}' mode=""/>
