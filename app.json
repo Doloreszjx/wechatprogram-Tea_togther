@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/classify/index", 
     "pages/news/index",
-    "pages/newsDetail/index"
+    "pages/newsDetail/index",
+    "pages/proDetail/index",
+    "pages/search/index"
   ],
   "tabBar": {
     "color": "#1a1b1c",

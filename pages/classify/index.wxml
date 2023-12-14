@@ -12,6 +12,7 @@
     <van-tabs
       swipeable
       border
+      id="myTabs"
       color="#BDA066"
       title-active-color="#BDA066"
       active="{{ navActive }}"
@@ -33,17 +34,19 @@
   <!-- 商品列表 -->
   <view class="pro-content-wrapper">
     <view wx:if="{{!!proList.length}}" class="pro-content">
-      <view 
+      <navigator
+        url="/pages/proDetail/index?id={{item.key}}" 
         class="pro-item-wrapper" 
         wx:for="{{proList}}" 
         wx:key="key"
+
       >
         <classify-pro-item 
           picUrl="{{item.picUrl}}"
           title="{{item.title}}"
           descList="{{item.descList}}"
         />
-      </view>
+      </navigator>
     </view>
     <view class="loading-wrapper">
       <van-loading wx:if="{{isLoading}}" type="spinner" />

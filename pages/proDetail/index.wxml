@@ -1,0 +1,25 @@
+<!--pages/proDetail/index.wxml-->
+<view wx:if="{{!isLoading}}">
+  <common-header />
+  <view wx:if="{{detailList}}" class="pro-detail-wrapper">
+    <!-- 产品图 -->
+    <view wx:if="{{picUrl}}" class="pic-wrapper">
+      <image src="{{picUrl}}" />
+    </view>
+    <!-- 产品详情 -->
+    <view class="detail-pro-content-wrapper">
+      <view wx:if="{{title}}" class="detail-pro-title">{{title}}</view>
+      <view 
+        wx:if="{{detailList}}" 
+        wx:for="{{detailList}}"
+        wx:key="index"
+        class="detail-desc-wrapper">
+        <view class="name">{{item.name}}:</view>
+        <view class="value">{{item.value}}</view>
+      </view>
+    </view>
+    
+  </view>
+  <common-footer />
+</view>
+<van-loading wx:else class="no-data" type="spinner" />

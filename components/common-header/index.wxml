@@ -18,5 +18,6 @@
     mode="aspectFit" 
     style="height: 40rpx; width: 40rpx;"  
     class="common-header-search"
+    bindtap="handleSearch"
   />
 </view>

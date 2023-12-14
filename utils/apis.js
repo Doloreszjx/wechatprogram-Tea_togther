@@ -27,7 +27,7 @@ export function queryNewsDetailInfo(data) {
 }
 
 // 商场页面导航栏接口
-export function queryProList(data) {
+export function queryProNavList(data) {
   return request({
     url: '/nav/get',
     method: 'POST',
@@ -39,6 +39,15 @@ export function queryProList(data) {
 export function queryNav2ProList(data) {
   return request({
     url: '/product/getlist',
+    method: 'POST',
+    data
+  })
+}
+
+// 商品详情页
+export function queryProList(data) {
+  return request({
+    url: '/product/detail',
     method: 'POST',
     data
   })

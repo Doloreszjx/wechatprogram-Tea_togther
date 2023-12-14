@@ -1,5 +1,5 @@
 // pages/classify/index.js
-import { queryProList, queryNav2ProList } from '../../utils/apis';
+import { queryProNavList, queryNav2ProList } from '../../utils/apis';
 import { formatObj2Arr } from '../../utils/common';
 
 // 初始选中导航栏第一项
@@ -36,7 +36,8 @@ async getNavList() {
   this.setData({
     isLoading: false
   })
-  await queryProList()
+  this.selectComponent("#myTabs").resize();
+  await queryProNavList()
     .then(res => {
       if (!!(res.errCode === 0 && res.data && res.data.length)) {
         const navList =  res.data.map(item => ({
@@ -80,11 +81,13 @@ getNav2ProList(activeSize=0) {
         picUrl: item.picpath,
         title: item.title,
       }));
+      const curProList = this.data.proList;
+      const newProList = [...curProList, ...formatProList];
       this.setData({
-        proList: formatProList,
+        proList: newProList,
         isLoading: false
       })
-      if (formatProList.length === res.total) {
+      if (newProList.length === res.total) {
         this.setData({
           isTotal: true
         })

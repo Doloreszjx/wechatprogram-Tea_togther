@@ -1,0 +1,57 @@
+/* pages/search/index.wxss */
+.search-history-wrapper {
+  padding: 20rpx 12rpx;
+}
+
+.search-history-wrapper .search-desc-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+
+.search-history-wrapper .search-desc-wrapper .title {
+  font-size: 32rpx;
+  color: var(--focusColor);
+}
+
+.search-history-wrapper .search-desc-wrapper .remove-wrapper {
+  color: var(--descColor);
+  display: flex;
+  align-items: center;
+}
+
+.search-history-wrapper .search-history-list {
+  padding: 20rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-history-wrapper .search-history-list .item {
+  background: var(--globalBgColor2);
+  color: #333;
+  font-size: 30rpx;
+  padding: 8rpx 25rpx;
+  margin: 0 20rpx 20rpx 0;
+  border-radius: 5rpx;
+}
+
+.search-history-wrapper .search-total {
+  padding: 30rpx 0 30rpx;
+  font-size: 28rpx;
+  color: var(--focusColor);
+}
+
+.search-history-wrapper .search-main-list {
+  padding: 30rpx 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.search-history-wrapper .search-main-list .box {
+  width: 330rpx;
+  border: 1rpx solid #efefef;
+  margin-bottom: 30rpx;
+}

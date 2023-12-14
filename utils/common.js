@@ -32,7 +32,6 @@ export function formatTime(value, type = 0) {
 
 // 将https://tea.qingnian8.com/product/getlist接口返回的商品数组格式化
 export function formatObj2Arr(obj) {
- 
   const keys = Object.keys(obj);
   const values = Object.values(obj);
   let curList = formatProList;
